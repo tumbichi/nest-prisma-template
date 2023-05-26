@@ -1,0 +1,29 @@
+version: "3.8"
+
+volumes:
+  mysql-data:
+
+services:
+  mysqldb:
+    image: mysql:8.0
+    # NOTE: Uncomment the line below if you are using Mac with m1/m2 chip
+    # platform: linux/x86_64
+    container_name: mysqldb
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  backend:
+    container_name: backend
+    build: .
+    depends_on:
+      - mysqldb
+    environment:
+      DATABASE_URL: ${DATABASE_URL} 
+      PORT: ${PORT}
+    ports:
+      - ${PORT}:${PORT}
