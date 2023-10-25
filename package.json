@@ -1,7 +1,7 @@
 {
   "name": "nestjs-primsa-template",
   "version": "0.0.1",
-  "description": "",
+  "description": "Nestjs + Prisma template for new projects",
   "author": "Tumbichi",
   "private": true,
   "license": "UNLICENSED",
@@ -22,18 +22,27 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "@nestjs/common": "^9.0.0",
-    "@nestjs/core": "^9.0.0",
-    "@nestjs/platform-express": "^9.0.0",
-    "@prisma/client": "^4.10.1",
-    "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.2.0"
+    "@nestjs/common": "9.0.0",
+    "@nestjs/config": "3.0.1",
+    "@nestjs/core": "9.0.0",
+    "@nestjs/jwt": "10.1.1",
+    "@nestjs/passport": "10.0.1",
+    "@nestjs/platform-express": "9.0.0",
+    "@prisma/client": "4.10.1",
+    "bcrypt": "5.1.1",
+    "class-transformer": "0.5.1",
+    "passport-jwt": "4.0.1",
+    "passport-local": "1.0.0",
+    "reflect-metadata": "0.1.13",
+    "rxjs": "7.2.0",
+    "zod": "3.22.2"
   },
   "devDependencies": {
     "@nestjs/cli": "^9.0.0",
     "@nestjs/schematics": "^9.0.0",
     "@nestjs/testing": "^9.0.0",
     "@types/express": "^4.17.13",
+    "@types/bcrypt": "5.0.0",
     "@types/jest": "29.2.4",
     "@types/node": "18.11.18",
     "@types/supertest": "^2.0.11",

@@ -7,9 +7,11 @@ services:
   mysqldb:
     image: mysql:8.0
     container_name: mysqldb
+    restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
     ports:
       - ${MYSQL_EXPOSE_PORT}:${MYSQL_DOCKER_PORT}
     volumes:
