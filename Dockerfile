@@ -14,4 +14,4 @@ RUN npm run build
 
 USER node
 
-CMD npm run start:prod:migrate
+CMD npm run start:prod
